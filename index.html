@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ESL Mystery Boxes</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div>
+        <p class="eyebrow">Classroom game</p>
+        <h1 id="gameTitle">Mystery Boxes</h1>
+      </div>
+      <nav class="nav" aria-label="Game views">
+        <button id="playBtn" class="active" type="button">Play</button>
+        <button id="editBtn" type="button">Teacher edit</button>
+        <button id="resetBtn" type="button">Reset board</button>
+      </nav>
+    </header>
+
+    <p id="turnBanner" class="turn-banner" aria-live="polite"></p>
+    <section id="scoreboard" class="scoreboard" aria-label="Team scores"></section>
+    <section id="board" class="board" aria-label="Mystery boxes"></section>
+
+    <section id="editor" class="editor hidden">
+      <h2>Customize this game</h2>
+      <p class="hint">
+        Tasks appear first. After students finish, reveal the prize. Save stays
+        in this browser; export a JSON file to reuse on your website.
+      </p>
+      <div class="editor-grid">
+        <label>
+          Game title
+          <input id="titleInput" type="text" />
+        </label>
+        <label>
+          Teams (comma separated)
+          <input id="teamsInput" type="text" />
+        </label>
+      </div>
+      <div class="editor-toolbar">
+        <button id="addBoxBtn" type="button">Add box</button>
+        <button id="saveBtn" class="primary" type="button">Save</button>
+        <button id="exportBtn" type="button">Export JSON</button>
+        <label class="file">
+          Import JSON
+          <input id="importInput" type="file" accept="application/json" />
+        </label>
+      </div>
+      <div id="boxEditor" class="box-editor"></div>
+    </section>
+
+    <dialog id="modal">
+      <div id="modalBody"></div>
+    </dialog>
+
+    <script src="app.js"></script>
+  </body>
+</html>
